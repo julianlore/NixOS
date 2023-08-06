@@ -15,17 +15,19 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.tmux
-    pkgs.neovim
-    pkgs.wl-clipboard
-    pkgs.nnn
-    pkgs.brave
-    pkgs.bitwarden
-    pkgs.betterbird
-    pkgs.syncthing
+  home.packages = with pkgs; [
+    tmux
+    neovim
+    wl-clipboard
+    nnn
+    lazygit
+    brave
+    bitwarden
+    betterbird
+    syncthing
+    cryptomator
     # Nonfree
-    pkgs.obsidian
+    obsidian
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
