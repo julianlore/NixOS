@@ -26,6 +26,7 @@
     betterbird
     syncthing
     cryptomator
+    audacious
     # Nonfree
     obsidian
   ];
