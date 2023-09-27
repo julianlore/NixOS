@@ -27,6 +27,9 @@
     syncthing
     cryptomator
     audacious
+    chromium
+    # Gaming
+    r2modman
     # Nonfree
     obsidian
   ];
