@@ -20,15 +20,11 @@
     wl-clipboard
     nnn
     lazygit
-    brave
     bitwarden
-    betterbird
     syncthing
     cryptomator
     audacious
     chromium
-    # Gaming
-    r2modman
     # Nonfree
     obsidian
   ];
