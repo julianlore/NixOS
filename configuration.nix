@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./SteamDeck-hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -70,6 +71,9 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
+  home-manager.useGlobalPkgs = true;
+  home-manager.users.jl = import "/home/jl/.config/home-manager/home.nix";
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -79,6 +83,9 @@
     cryptsetup
   ];
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "obsidian"
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
