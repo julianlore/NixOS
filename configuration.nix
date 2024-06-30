@@ -19,6 +19,13 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  nix.nixPath =
+    [
+      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+      "nixos-config=/home/jl/NixOS/configuration.nix"
+      "/nix/var/nix/profiles/per-user/root/channels"
+    ];
+
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
 
