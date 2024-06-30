@@ -24,6 +24,7 @@
     syncthing
     cryptomator
     audacious
+    firefox
     chromium
     # Nonfree
     obsidian
