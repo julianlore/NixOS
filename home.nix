@@ -2,7 +2,6 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  targets.genericLinux.enable = true;
   home.username = "jl";
   home.homeDirectory = "/home/jl";
 
