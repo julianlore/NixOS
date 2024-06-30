@@ -76,6 +76,7 @@
     vim
     wget
     git
+    cryptsetup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
