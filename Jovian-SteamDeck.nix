@@ -16,5 +16,7 @@
     ];
 
   jovian.devices.steamdeck.enable = true;
+  jovian.devices.steamdeck.enableKernelPatches = false;
+  jovian.devices.steamdeck.enableOsFanControl = false;
   jovian.devices.steamdeck.autoUpdate = true;
 }
