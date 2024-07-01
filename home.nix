@@ -26,6 +26,7 @@
     audacious
     firefox
     chromium
+    signal-desktop
     # Nonfree
     obsidian
   ];
