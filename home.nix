@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ./fish.nix
+    ];
+
   nixpkgs.config.allowUnfree = true;
   home.username = "jl";
   home.homeDirectory = "/home/jl";
