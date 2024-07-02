@@ -56,6 +56,8 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
