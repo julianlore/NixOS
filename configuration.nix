@@ -46,6 +46,7 @@
 
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasmax11";
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "jl";
 
