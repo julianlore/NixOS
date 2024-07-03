@@ -1,8 +1,15 @@
 { config, pkgs, ... }:
+
+let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+  });
+in
 {
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
-  programs.neovim.vimdiffAlias = true;
+  imports = [
+    nixvim.homeManagerModules.nixvim
+  ];
+
+  programs.nixvim.enable = true;
+  programs.nixvim.defaultEditor = true;
 }
