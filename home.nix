@@ -4,6 +4,7 @@
   imports =
     [
       ./fish.nix
+      ./neovim.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -21,7 +22,6 @@
 
   home.packages = with pkgs; [
     tmux
-    neovim
     wl-clipboard
     nnn
     lazygit
