@@ -29,5 +29,12 @@ in
       # tab = spaces
       expandtab = true;
     };
+
+    globals.mapleader = " ";
+
+    clipboard.providers.wl-copy.enable = true;
+    colorschemes.tokyonight.enable = true;
+
+    plugins = import ./plugins.nix;
   };
 }
