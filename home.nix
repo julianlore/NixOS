@@ -5,6 +5,7 @@
     [
       ./fish.nix
       ./neovim
+      ./symlinks.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
