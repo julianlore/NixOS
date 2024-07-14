@@ -4,6 +4,7 @@
   trim.enable = true;
   nvim-autopairs.enable = true;
   treesitter.enable = true;
+  treesitter.folding = false;
   rainbow-delimiters.enable = true;
   lualine.enable = true;
   leap.enable = true;
