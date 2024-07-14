@@ -9,9 +9,19 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-telescope-recent-files = {
+      url = "github:smartpde/telescope-recent-files";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: {
+  outputs = inputs@
+    { nixpkgs,
+      home-manager,
+      nixvim,
+      plugin-telescope-recent-files,
+      ... }:
+    {
     nixosConfigurations.JollyJoy = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

@@ -1,4 +1,4 @@
-{ pkgs, nixvim, ... }:
+{ pkgs, nixvim, plugin-telescope-recent-files, ... }:
 
 {
   imports =
@@ -36,7 +36,7 @@
     obsidian
   ];
 
-  programs.nixvim = import ./neovim;
+  programs.nixvim = import ./neovim { pkgs = pkgs; plugin-telescope-recent-files = plugin-telescope-recent-files; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

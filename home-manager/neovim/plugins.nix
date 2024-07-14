@@ -10,6 +10,8 @@
   leap.enable = true;
   illuminate.enable = true;
   which-key.enable = true;
+  project-nvim.enable = true;
+  dressing.enable = true;
 
   telescope.enable = true;
   telescope.extensions.fzf-native.enable = true;
@@ -24,6 +26,7 @@
     };
   };
 
+  fugitive.enable = true;
   gitsigns.enable = true;
   lazygit.enable = true;
 }
