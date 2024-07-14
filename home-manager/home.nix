@@ -1,14 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, nixvim, ... }:
 
 {
   imports =
     [
+      nixvim.homeManagerModules.nixvim
       ./fish.nix
-      ./neovim
       ./symlinks.nix
     ];
 
-  nixpkgs.config.allowUnfree = true;
   home.username = "jl";
   home.homeDirectory = "/home/jl";
 
@@ -36,6 +35,8 @@
     # Nonfree
     obsidian
   ];
+
+  programs.nixvim = import ./neovim;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

@@ -9,9 +9,10 @@
     [ # Include the results of the hardware scan.
       ./SteamDeck-hardware-configuration.nix
       ./Jovian-SteamDeck.nix
-      <home-manager/nixos>
       ./unfree-package-whitelist.nix
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -21,13 +22,6 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  nix.nixPath =
-    [
-      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-      "nixos-config=/home/jl/NixOS/configuration.nix"
-      "/nix/var/nix/profiles/per-user/root/channels"
-    ];
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -75,9 +69,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.users.jl = import "/home/jl/.config/home-manager/home.nix";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
