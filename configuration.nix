@@ -6,9 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./SteamDeck-hardware-configuration.nix
-      ./Jovian-SteamDeck.nix
+    [
       ./unfree-package-whitelist.nix
     ];
 
