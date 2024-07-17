@@ -2,7 +2,7 @@
 {
   enable = true;
   newSession = true;
-  prefix = "a";
+  prefix = "C-a";
   baseIndex = 1;
   mouse = true;
 
