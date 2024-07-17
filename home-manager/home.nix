@@ -1,9 +1,10 @@
-{ pkgs, nixvim, plugin-telescope-recent-files, ... }:
+{ pkgs, nixvim, nix-index-database, plugin-telescope-recent-files, ... }:
 
 {
   imports =
     [
       nixvim.homeManagerModules.nixvim
+      nix-index-database.hmModules.nix-index
       ./fish.nix
       ./symlinks.nix
     ];
@@ -68,6 +69,7 @@
   };
 
   programs.tmux = import ./tmux.nix { tmuxPlugins = pkgs.tmuxPlugins; };
+  programs.nix-index-database.comma.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

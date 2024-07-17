@@ -13,6 +13,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     plugin-telescope-recent-files = {
       url = "github:smartpde/telescope-recent-files";
       flake = false;
