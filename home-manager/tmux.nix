@@ -7,6 +7,10 @@
   mouse = true;
 
   plugins = with tmuxPlugins; [
+    {
+    plugin = continuum;
+    extraConfig = "set -g @continuum-restore 'on'";
+    }
     resurrect
     yank
     tokyo-night-tmux
