@@ -33,6 +33,7 @@
     firefox
     chromium
     signal-desktop
+    bazecor
     # Nonfree
     obsidian
   ];
