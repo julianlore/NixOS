@@ -34,6 +34,7 @@
     chromium
     signal-desktop
     bazecor
+    libreoffice-qt6-fresh
     # Nonfree
     obsidian
   ];
