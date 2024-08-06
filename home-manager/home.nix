@@ -68,7 +68,8 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # Used by nh
+    FLAKE = "$HOME/NixOS";
   };
 
   programs.tmux = import ./tmux.nix { tmuxPlugins = pkgs.tmuxPlugins; };
