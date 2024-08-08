@@ -5,7 +5,7 @@
     [
       nixvim.homeManagerModules.nixvim
       nix-index-database.hmModules.nix-index
-      ./fish.nix
+      ./fish
       ./symlinks.nix
     ];
 
