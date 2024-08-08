@@ -4,6 +4,8 @@
 
 { pkgs, ... }:
 
+let nixPath = "/etc/nixPath";
+in
 {
   imports =
     [
@@ -11,6 +13,13 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Make nixpkgs follow flakes
+  systemd.tmpfiles.rules = [
+    "L+ ${nixPath} - - - - ${pkgs.path}"
+  ];
+
+  nix.nixPath = [ "nixpkgs=${nixPath}" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
