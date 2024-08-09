@@ -33,4 +33,5 @@
       '';
     };
   };
+  programs.fish.shellAbbrs = import ./git.nix;
 }
