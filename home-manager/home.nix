@@ -36,6 +36,7 @@
     libreoffice-qt6-fresh
     jellyfin-media-player
     grc
+    ripgrep
     # Nonfree
     obsidian
   ];
