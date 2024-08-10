@@ -317,6 +317,22 @@
         "type": "github"
       }
     },
+    "plugin-fish-abbreviation-tips": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1674487577,
+        "narHash": "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=",
+        "owner": "Gazorby",
+        "repo": "fish-abbreviation-tips",
+        "rev": "8ed76a62bb044ba4ad8e3e6832640178880df485",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gazorby",
+        "repo": "fish-abbreviation-tips",
+        "type": "github"
+      }
+    },
     "plugin-telescope-recent-files": {
       "flake": false,
       "locked": {
@@ -340,6 +356,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "plugin-fish-abbreviation-tips": "plugin-fish-abbreviation-tips",
         "plugin-telescope-recent-files": "plugin-telescope-recent-files"
       }
     },

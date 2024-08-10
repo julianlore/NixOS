@@ -1,11 +1,10 @@
-{ pkgs, nixvim, nix-index-database, plugin-telescope-recent-files, ... }:
+{ pkgs, nixvim, nix-index-database, plugin-telescope-recent-files, plugin-fish-abbreviation-tips, ... }:
 
 {
   imports =
     [
       nixvim.homeManagerModules.nixvim
       nix-index-database.hmModules.nix-index
-      ./fish
       ./symlinks.nix
     ];
 
@@ -36,11 +35,13 @@
     bazecor
     libreoffice-qt6-fresh
     jellyfin-media-player
+    grc
     # Nonfree
     obsidian
   ];
 
   programs.nixvim = import ./neovim { pkgs = pkgs; plugin-telescope-recent-files = plugin-telescope-recent-files; };
+  programs.fish = import ./fish { pkgs = pkgs; plugin-fish-abbreviation-tips = plugin-fish-abbreviation-tips; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

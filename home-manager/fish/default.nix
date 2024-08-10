@@ -1,6 +1,8 @@
+{ pkgs, plugin-fish-abbreviation-tips, ... } :
+
 {
-  programs.fish.enable = true;
-  programs.fish.functions = {
+  enable = true;
+  functions = {
     n = {
       wraps = "nnn";
       description = "support nnn quit and change directory";
@@ -33,5 +35,35 @@
       '';
     };
   };
-  programs.fish.shellAbbrs = import ./git.nix;
+  shellAbbrs = import ./git.nix // {
+    tideconf = ''
+      tide configure \
+        --auto \
+        --style=Rainbow \
+        --prompt_colors='True color' \
+        --show_time='12-hour format' \
+        --rainbow_prompt_separators=Vertical \
+        --powerline_prompt_heads=Sharp \
+        --powerline_prompt_tails=Flat \
+        --powerline_prompt_style='Two lines, character' \
+        --prompt_connection=Disconnected \
+        --powerline_right_prompt_frame=No \
+        --prompt_spacing=Compact \
+        --icons='Many icons' \
+        --transient=No
+    '';
+  };
+  plugins = map (n: { name = n; src = pkgs.fishPlugins.${n}.src; }) [
+    "done"
+    "grc"
+    "pisces"
+    "sponge"
+    "tide"
+    "z"
+  ] ++ [
+    {
+      name = "abbreviation-tips";
+      src = plugin-fish-abbreviation-tips;
+    }
+  ];
 }

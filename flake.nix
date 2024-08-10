@@ -21,6 +21,10 @@
       url = "github:smartpde/telescope-recent-files";
       flake = false;
     };
+    plugin-fish-abbreviation-tips = {
+      url = "github:Gazorby/fish-abbreviation-tips";
+      flake = false;
+    };
   };
 
   outputs = inputs@
