@@ -29,6 +29,8 @@ in
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
+  home-manager.useGlobalPkgs = true;
+
   environment.systemPackages = with pkgs; [
     vim
     wget

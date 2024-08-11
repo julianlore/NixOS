@@ -42,9 +42,7 @@
         jovian.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
           home-manager.extraSpecialArgs = inputs;
-          home-manager.users.jl = import ./home-manager/home.nix;
         }
       ];
     };

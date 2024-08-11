@@ -5,7 +5,6 @@
     [
       nixvim.homeManagerModules.nixvim
       nix-index-database.hmModules.nix-index
-      ./symlinks.nix
     ];
 
   home.username = "jl";
@@ -25,20 +24,8 @@
     wl-clipboard
     nnn
     lazygit
-    bitwarden
-    syncthing
-    cryptomator
-    audacious
-    firefox
-    chromium
-    signal-desktop
-    bazecor
-    libreoffice-qt6-fresh
-    jellyfin-media-player
     grc
     ripgrep
-    # Nonfree
-    obsidian
   ];
 
   programs.nixvim = import ./neovim { pkgs = pkgs; plugin-telescope-recent-files = plugin-telescope-recent-files; };
