@@ -20,8 +20,6 @@
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    tmux
-    wl-clipboard
     nnn
     lazygit
     grc
