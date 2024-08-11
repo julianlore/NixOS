@@ -37,9 +37,8 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        ./JollyJoy-hardware-configuration.nix
+        ./hosts/JollyJoy
         jovian.nixosModules.default
-        ./Jovian-SteamDeck.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
