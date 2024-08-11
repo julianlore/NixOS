@@ -37,6 +37,7 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ./graphical.nix
         ./hosts/JollyJoy
         jovian.nixosModules.default
         home-manager.nixosModules.home-manager

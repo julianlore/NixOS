@@ -24,19 +24,6 @@ in
 
   time.timeZone = "America/Toronto";
 
-  services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "jl";
-
-  hardware.bluetooth.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
   users.users.jl= {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -64,12 +51,6 @@ in
   programs.nh = {
     enable = true;
   };
-
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "Iosevka"
-    ];})
-  ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
