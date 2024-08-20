@@ -14,7 +14,7 @@
     signal-desktop
     bazecor
     libreoffice-qt6-fresh
-    jellyfin-media-player
+    jellyfin-mpv-shim
     # Nonfree
     obsidian
   ];
