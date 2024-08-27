@@ -27,12 +27,7 @@
     };
   };
 
-  outputs = inputs@
-    { nixpkgs,
-      home-manager,
-      jovian,
-      ... }:
-    {
+  outputs = inputs@{ nixpkgs, home-manager, jovian, ... }: {
     nixosConfigurations.JollyJoy = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -41,9 +36,7 @@
         ./hosts/JollyJoy
         jovian.nixosModules.default
         home-manager.nixosModules.home-manager
-        {
-          home-manager.extraSpecialArgs = inputs;
-        }
+        { home-manager.extraSpecialArgs = inputs; }
       ];
     };
   };

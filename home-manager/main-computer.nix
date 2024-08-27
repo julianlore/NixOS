@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ./symlinks.nix
-    ];
+  imports = [ ./symlinks.nix ];
 
   home.packages = with pkgs; [
     bitwarden

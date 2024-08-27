@@ -14,14 +14,8 @@
     pulse.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    firefox
-    chromium
-  ];
+  environment.systemPackages = with pkgs; [ firefox chromium ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "Iosevka"
-    ];})
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "Iosevka" ]; }) ];
 }

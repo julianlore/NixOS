@@ -1,4 +1,4 @@
-{ pkgs, plugin-fish-abbreviation-tips, ... } :
+{ pkgs, plugin-fish-abbreviation-tips, ... }:
 
 {
   enable = true;
@@ -53,17 +53,11 @@
         --transient=No
     '';
   };
-  plugins = map (n: { name = n; src = pkgs.fishPlugins.${n}.src; }) [
-    "done"
-    "grc"
-    "pisces"
-    "sponge"
-    "tide"
-    "z"
-  ] ++ [
-    {
-      name = "abbreviation-tips";
-      src = plugin-fish-abbreviation-tips;
-    }
-  ];
+  plugins = map (n: {
+    name = n;
+    src = pkgs.fishPlugins.${n}.src;
+  }) [ "done" "grc" "pisces" "sponge" "tide" "z" ] ++ [{
+    name = "abbreviation-tips";
+    src = plugin-fish-abbreviation-tips;
+  }];
 }
