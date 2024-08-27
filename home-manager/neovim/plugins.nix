@@ -21,9 +21,14 @@
 
   lsp = {
     enable = true;
-    servers = {
-      nixd.enable = true;
-    };
+    servers = { nixd.enable = true; };
+  };
+
+  lsp-format.enable = true;
+
+  none-ls = {
+    enable = true;
+    sources.formatting = { nixfmt.enable = true; };
   };
 
   fugitive.enable = true;
