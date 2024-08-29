@@ -32,6 +32,7 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ./rpfilter-wireguard-networkmanager.nix
         ./graphical.nix
         ./hosts/JollyJoy
         jovian.nixosModules.default
