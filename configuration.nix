@@ -39,6 +39,18 @@ in {
     '';
   };
 
+  # Parameterized systemd service for creating a network namespace
+  systemd.services."netns@" = {
+    description = "%I network namespace";
+    before = [ "network.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.iproute}/bin/ip netns add %I";
+      ExecStop = "${pkgs.iproute}/bin/ip netns del %I";
+    };
+  };
+
   programs.nh = { enable = true; };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
