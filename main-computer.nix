@@ -12,5 +12,7 @@
     '';
   };
 
+  environment.systemPackages = with pkgs; [ cryptsetup ];
+
   services.udev.packages = [ pkgs.bazecor ];
 }
