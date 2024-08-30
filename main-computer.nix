@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # Bypass rpfilter for 51820/wireguard using NetworkManager
   networking.firewall = {
     # wireguard trips rpfilter up
@@ -11,4 +11,6 @@
       ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
     '';
   };
+
+  services.udev.packages = [ pkgs.bazecor ];
 }
