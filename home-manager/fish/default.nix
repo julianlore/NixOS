@@ -3,6 +3,11 @@
 {
   enable = true;
   functions = {
+    ns = {
+      description = "Runs a program in the provided network namespace";
+      argumentNames = "namespace";
+      body = "sudo ip netns exec $namespace sudo -u $(whoami) $argv[2..-1]";
+    };
     n = {
       wraps = "nnn";
       description = "support nnn quit and change directory";
