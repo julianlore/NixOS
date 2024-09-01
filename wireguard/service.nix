@@ -3,24 +3,22 @@
 # Example args:
 # imports = [
 #   (import ./service.nix {
-#     inherit lib;
 #     inherit pkgs;
 #     name = "vpn1";
 #     wg-interface = "wg0";
 #     ip = "10.1.0.2/32";
 #     dns = "10.1.0.1"
 #     conf = "/path/to/wg0.conf";
-#     at-boot = true;
 #   })
 # ];
 # Make sure to remove/comment Address and DNS from conf. Conf name does not matter/need to match interface.
-{ lib, pkgs, name, wg-interface, ip, dns, conf, at-boot }: {
+{ pkgs, name, wg-interface, ip, dns, conf }: {
   systemd.services.${name} = {
     description = "wg ${name} network interface";
     bindsTo = [ "netns@${name}.service" ];
     requires = [ "network-online.target" ];
     after = [ "netns@${name}.service" ];
-    wantedBy = lib.mkIf at-boot [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
