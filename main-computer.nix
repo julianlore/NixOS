@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./wireguard/main-computer.nix ];
   # Bypass rpfilter for 51820/wireguard using NetworkManager
   networking.firewall = {
@@ -16,4 +16,15 @@
   environment.systemPackages = with pkgs; [ cryptsetup ];
 
   services.udev.packages = [ pkgs.bazecor ];
+
+  programs.firejail = {
+    enable = true;
+    wrappedBinaries = {
+      firefox = {
+        executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        extraArgs = [ "--netns=vpn1" ];
+      };
+    };
+  };
 }
