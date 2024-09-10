@@ -8,5 +8,21 @@
       dns = "10.2.0.1";
       conf = "/home/jl/wg/main.conf";
     })
+    (import ./service.nix {
+      inherit pkgs;
+      name = "vps-vpn";
+      wg-interface = "wg1";
+      ip = "10.13.13.2/32";
+      dns = "10.2.0.100";
+      conf = "/home/jl/wg/vps.conf";
+    })
+    (import ./service.nix {
+      inherit pkgs;
+      name = "vpscad-vpn";
+      wg-interface = "wg2";
+      ip = "10.14.14.6/32";
+      dns = "10.14.14.1";
+      conf = "/home/jl/wg/vpscad.conf";
+    })
   ];
 }
