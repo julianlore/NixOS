@@ -22,6 +22,8 @@
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
+      # Only start service if the configuration file exists. This allows declaring many services (which are enabled), but can be toggled off at boot by renaming the file.
+      ExecStartPre = "${pkgs.coreutils}/bin/test -f ${conf}";
       ExecStart = with pkgs;
         writers.writeBash "wg-up" ''
           set -e
