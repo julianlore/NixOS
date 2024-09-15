@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
-  imports = [ ./wireguard/main-computer.nix ];
+  imports = [ ./wireguard/main-computer.nix ./impermanence.nix ];
   # Bypass rpfilter for 51820/wireguard using NetworkManager
   networking.firewall = {
     # wireguard trips rpfilter up

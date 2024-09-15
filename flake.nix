@@ -13,6 +13,7 @@
       url = "github:MrOtherGuy/firefox-csshacks";
       flake = false;
     };
+    impermanence.url = "github:nix-community/impermanence";
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +36,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, jovian, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, impermanence, jovian, ... }: {
     nixosConfigurations.JollyJoy = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -43,6 +44,7 @@
         ./main-computer.nix
         ./graphical.nix
         ./hosts/JollyJoy
+        impermanence.nixosModules.impermanence
         jovian.nixosModules.default
         home-manager.nixosModules.home-manager
         { home-manager.extraSpecialArgs = inputs; }
