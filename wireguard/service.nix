@@ -4,7 +4,7 @@
 # imports = [
 #   (import ./service.nix {
 #     inherit pkgs;
-#     name = "vpn1";
+#     name = "vpn1"; # - in name can cause problems (treated as / for netns@${name}?)
 #     wg-interface = "wg0";
 #     ip = "10.1.0.2/32";
 #     dns = "10.1.0.1"

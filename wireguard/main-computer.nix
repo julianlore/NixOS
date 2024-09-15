@@ -10,7 +10,7 @@
     })
     (import ./service.nix {
       inherit pkgs;
-      name = "vps-vpn";
+      name = "vpsvpn";
       wg-interface = "wg1";
       ip = "10.13.13.2/32";
       dns = "10.2.0.100";
@@ -18,7 +18,7 @@
     })
     (import ./service.nix {
       inherit pkgs;
-      name = "vpscad-vpn";
+      name = "vpscadvpn";
       wg-interface = "wg2";
       ip = "10.14.14.6/32";
       dns = "10.14.14.1";
