@@ -7,7 +7,7 @@
       "/var/lib/nixos"
       "/var/lib/bluetooth"
       "/var/lib/systemd/coredump"
-      "/etc/NetworkManager"
+      "/etc" # For mutable passwords/without hardcoding hashedPassword (couldn't get hashedPasswordFile to work)
       "/home"
     ];
     files = [ "/etc/machine-id" ];
