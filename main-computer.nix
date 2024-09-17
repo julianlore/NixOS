@@ -50,4 +50,8 @@
       };
     };
   };
+
+  home-manager.users.jl = {
+    imports = [ ./home-manager/common.nix ./home-manager/main-computer.nix ];
+  };
 }
