@@ -25,14 +25,26 @@
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
         extraArgs = [ "--netns=vpn1" ];
       };
+      firefoxnovpn = {
+        executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+      };
+      firefoxvps = {
+        executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        extraArgs = [ "--netns=vpsvpn" ];
+      };
       chromium = {
         executable = "${lib.getBin pkgs.chromium}/bin/chromium";
         profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
       };
       chromiumvpn = {
-        executable = "${
-            lib.getBin pkgs.chromium
-          }/bin/chromium --user-data-dir=/home/jl/chromium_vpn";
+        executable = "${lib.getBin pkgs.chromium}/bin/chromium";
+        profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
+        extraArgs = [ "--netns=vpn1" ];
+      };
+      chromiumvps = {
+        executable = "${lib.getBin pkgs.chromium}/bin/chromium";
         profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
         extraArgs = [ "--netns=vpsvpn" ];
       };
