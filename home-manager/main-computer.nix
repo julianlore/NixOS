@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./symlinks.nix ./firefox ];
+  imports = [ ./symlinks.nix ./firefox ./impermanence.nix ];
 
   home.packages = with pkgs; [
     bitwarden

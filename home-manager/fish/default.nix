@@ -63,7 +63,7 @@
     '';
     # Copy last Defy backup
     cpdefy =
-      "cp $(ls -1d $(ls -1d ~/Dygma/Backups/Defy/*)/* | tail -n1) ~/Defy/Defy.json";
+      "cp $(ls -1d $(ls -1d ~/Dygma/Backups/Defy/*)/* | tail -n1) ~/persistent/Defy/Defy.json";
   };
   plugins = map (n: {
     name = n;
