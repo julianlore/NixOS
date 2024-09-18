@@ -27,6 +27,20 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
+  # LUKS device for /home/persistent
+  boot.initrd.luks.devices."home" = {
+    device = "/dev/disk/by-uuid/d9dc2b8f-346c-4222-b170-0056075796d4";
+    keyFileSize = 2048;
+    keyFile = "/dev/sda";
+    fallbackToPassword = true;
+  };
+
+  fileSystems."/home/persistent" = {
+    device = "/dev/disk/by-uuid/2458fb70-3b07-497a-bc2d-c351f6cc65d4";
+    fsType = "btrfs";
+    neededForBoot = true;
+  };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/bda2c370-23a3-4fc5-b5a4-42807bf0d72f"; }];
 
