@@ -1,4 +1,5 @@
 {
+  imports = [ ./impermanence-jl.nix ];
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
@@ -11,6 +12,5 @@
       "/etc" # For mutable passwords/without hardcoding hashedPassword (couldn't get hashedPasswordFile to work)
     ];
     files = [ "/etc/machine-id" ];
-    users.jl = import ./impermanence-jl.nix;
   };
 }
