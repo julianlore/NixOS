@@ -24,10 +24,16 @@ in {
         "Signal"
         "syncthing"
         # "syncthing" # Currently in symlinks.nix
-      ]) ++ (builtins.map (prefixDir ".local/share") [ "kwalletd" "nvim" "z" ])
-      ++ (builtins.map (prefixDir ".local/state") [ "nvim" "wireplumber" ]);
+      ]) ++ (builtins.map (prefixDir ".local/share") [
+        "fish"
+        "kwalletd"
+        "nvim"
+        "z"
+      ]) ++ (builtins.map (prefixDir ".local/state") [ "nvim" "wireplumber" ]);
     files = [ ".bash_history" ".gitconfig" ".gtkrc-2.0" ]
       ++ (builtins.map (prefixFile ".config") [
+        "gtkrc"
+        "gtkrc-2.0"
         "kglobalshortcutsrc"
         "konsolerc"
         "kscreenlockerrc"
@@ -37,10 +43,11 @@ in {
         "mimeapp.list" # Default programs
         "plasma-nm" # Whether airplane mode is on
         "plasma-org.kde.plasma.desktop-appletsrc"
+        "plasmashellrc"
         "powerdevilrc" # Power saving options/timeouts
         "spectaclerc"
+        "Trolltech.conf" # Themes/color config
       ]) ++ (builtins.map (prefixFile ".local/share") [
-        "fish/fish_history"
         "recently-used.xbel"
         "user-places.xbel"
       ]) ++ (builtins.map (prefixFile ".local/state") [
