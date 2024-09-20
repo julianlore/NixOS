@@ -1,5 +1,12 @@
 {
   imports = [ ./impermanence-jl.nix ];
+  # Persist mutable passwords. Note: does not allow changing passwords (probably overwritten by passwd) without replacing source file manually. Alternatively persist all of /etc.
+  # https://github.com/nix-community/impermanence/issues/120
+  environment.etc = {
+    "group".source = "/persistent/etc/group";
+    "passwd".source = "/persistent/etc/passwd";
+    "shadow".source = "/persistent/etc/shadow";
+  };
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
@@ -9,7 +16,7 @@
       "/var/lib/bluetooth"
       "/var/lib/systemd/rfkill" # Remember which devices (wifi, bluetooth) are off
       "/var/lib/systemd/coredump"
-      "/etc" # For mutable passwords/without hardcoding hashedPassword (couldn't get hashedPasswordFile to work)
+      "/etc/NetworkManager"
     ];
     files = [ "/etc/machine-id" ];
   };
