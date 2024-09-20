@@ -40,7 +40,7 @@ in {
         "kwalletrc"
         "kwinrc" # Desktops, night color, tiling
         "kxkbrc" # Keyboard layout
-        "mimeapp.list" # Default programs
+        "mimeapps.list" # Default programs
         "plasma-nm" # Whether airplane mode is on
         "plasma-org.kde.plasma.desktop-appletsrc"
         "plasmashellrc"
