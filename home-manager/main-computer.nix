@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./firefox ];
+  imports = [ ./firefox ./plasma.nix ];
 
   home.packages = with pkgs; [
     bitwarden

@@ -475,6 +475,29 @@
         "type": "github"
       }
     },
+    "plasma-manager": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726509788,
+        "narHash": "sha256-PmCmO8NDKzwHrTp9Ox/rcLiCYivqIpZlnLk8wZRjv2I=",
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "rev": "5a0c70a007837e2db01e0bb68971792e8653d32c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
     "plugin-fish-abbreviation-tips": {
       "flake": false,
       "locked": {
@@ -538,6 +561,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "plasma-manager": "plasma-manager",
         "plugin-fish-abbreviation-tips": "plugin-fish-abbreviation-tips",
         "plugin-telescope-recent-files": "plugin-telescope-recent-files"
       }
