@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./firefox ./plasma.nix ];
@@ -15,4 +15,24 @@
     # Nonfree
     obsidian
   ];
+
+  home.file.".config/autostart/firefox.desktop".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "/run/current-system/sw/share/applications/firefox.desktop";
+  home.file.".config/autostart/obsidian.desktop".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "/home/jl/.nix-profile/share/applications/obsidian.desktop";
+  home.file.".config/autostart/signal-desktop.desktop".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "/home/jl/.nix-profile/share/applications/signal-desktop.desktop";
+  home.file.".config/autostart/konsole-tmux.desktop".text = ''
+    [Desktop Entry]
+    Exec=konsole -e tmux attach-session
+    Icon=application-x-shellscript
+    Name=konsole-tmux
+    Type=Application
+    X-KDE-AutostartScript=true
+  '';
+
+  services.syncthing.enable = true;
 }
