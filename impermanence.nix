@@ -1,12 +1,7 @@
 {
   imports = [ ./impermanence-jl.nix ];
-  # Persist mutable passwords. Note: does not allow changing passwords (probably overwritten by passwd) without replacing source file manually. Alternatively persist all of /etc.
-  # https://github.com/nix-community/impermanence/issues/120
-  environment.etc = {
-    "group".source = "/persistent/etc/group";
-    "passwd".source = "/persistent/etc/passwd";
-    "shadow".source = "/persistent/etc/shadow";
-  };
+  users.users.jl.hashedPasswordFile = "/persistent/home/jl/jl-shadow";
+  users.mutableUsers = false;
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
