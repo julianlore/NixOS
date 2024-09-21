@@ -2,7 +2,7 @@ let
   prefixDir = prefix: dir: "${prefix}/${dir}";
   prefixFile = prefix: file: "${prefix}/${file}";
 in {
-  environment.persistence."/home/persistent".users.jl = {
+  environment.persistence."/persistent".users.jl = {
     # Prefer symlinking directories instead of default bindfs
     directories = [ "Documents" "NixOS" "persistent" "wg" ] ++
       # Program folders

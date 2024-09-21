@@ -15,28 +15,22 @@
     options = [ "defaults" "size=25%" "mode=755" ];
   };
 
-  fileSystems."/persistent" = {
-    device = "/dev/disk/by-uuid/f753ef55-ffdd-476b-9991-452c07c6b1e9";
-    fsType = "btrfs";
-    neededForBoot = true;
-  };
-
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6F10-C222";
+    device = "/dev/disk/by-uuid/878C-57E8";
     fsType = "vfat";
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
   # LUKS device for /home/persistent
-  boot.initrd.luks.devices."home" = {
-    device = "/dev/disk/by-uuid/d9dc2b8f-346c-4222-b170-0056075796d4";
+  boot.initrd.luks.devices."root" = {
+    device = "/dev/disk/by-uuid/45a4663c-dd78-4661-8997-70d506ba5315";
     keyFileSize = 2048;
     keyFile = "/dev/sda";
     fallbackToPassword = true;
   };
 
-  fileSystems."/home/persistent" = {
-    device = "/dev/disk/by-uuid/2458fb70-3b07-497a-bc2d-c351f6cc65d4";
+  fileSystems."/persistent" = {
+    device = "/dev/disk/by-uuid/e6429970-1bba-4266-a2b1-d6f97e675dd0";
     fsType = "btrfs";
     neededForBoot = true;
   };
