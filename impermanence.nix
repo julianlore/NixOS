@@ -9,7 +9,7 @@
       "/var/log"
       "/var/lib/nixos"
       "/var/lib/bluetooth"
-      "/var/lib/systemd/rfkill" # Remember which devices (wifi, bluetooth) are off
+      "/var/lib/NetworkManager" # Remember if wifi is off, as NetworkManager manages it
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager"
     ];
