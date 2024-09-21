@@ -36,6 +36,8 @@
       "plasmashell"."show-on-mouse-pos" = "Meta+V";
     };
     configFile = {
+      "baloofilerc"."Basic Settings"."Indexing-Enabled" =
+        false; # Disable file indexing as it takes up a lot of space and will be redone on boot if not persisted
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kscreenlockerrc"."Daemon"."Autolock" = false;
