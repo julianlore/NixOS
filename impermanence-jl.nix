@@ -13,6 +13,7 @@ in {
         "Bazecor"
         "Bitwarden"
         "chromium"
+        "dconf"
         "filezilla"
         "fish" # fish_variables
         "gtk-3.0"
@@ -23,7 +24,7 @@ in {
         "obsidian"
         "Signal"
         "syncthing"
-        # "syncthing" # Currently in symlinks.nix
+        "xsettingsd" # Theme, DPI, cursor, etc.
       ]) ++ (builtins.map (prefixDir ".local/share") [
         "fish"
         "kwalletd"
@@ -34,10 +35,13 @@ in {
       ++ (builtins.map (prefixFile ".config") [
         "gtkrc"
         "gtkrc-2.0"
+        "kconf_updaterc" # Migrations that have been done and no longer need to be done
+        "kdeglobals"
         "kglobalshortcutsrc"
         "konsolerc"
         "kscreenlockerrc"
         "kwalletrc"
+        "kwinoutputconfig.json" # Display configuration (which screens to use, resolution, etc.)
         "kwinrc" # Desktops, night color, tiling
         "kxkbrc" # Keyboard layout
         "mimeapps.list" # Default programs

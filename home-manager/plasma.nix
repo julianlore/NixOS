@@ -3,6 +3,8 @@
   programs.plasma = {
     enable = true;
     shortcuts = {
+      "kcm_touchpad"."Enable Touchpad" =
+        [ ]; # Overwrite Touchpad as to not conflict with mic_mute
       "kmix"."mic_mute" = "Touchpad On"; # Touchpad On = F22
       "kwin"."Show Desktop" = "Meta+D";
       "kwin"."Walk Through Windows" = "Alt+Tab";
