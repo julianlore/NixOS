@@ -16,6 +16,8 @@
   telescope.enable = true;
   telescope.extensions.fzf-native.enable = true;
 
+  web-devicons.enable = true; # Required for telescope
+
   cmp.enable = true;
   cmp-nvim-lsp.enable = true;
 
