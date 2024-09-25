@@ -20,6 +20,9 @@
     obsidian
   ];
 
+  home.file.".config/autostart/discord.desktop".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "/run/current-system/sw/share/applications/discord.desktop";
   home.file.".config/autostart/firefox.desktop".source =
     config.lib.file.mkOutOfStoreSymlink
     "/run/current-system/sw/share/applications/firefox.desktop";

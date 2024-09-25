@@ -13,7 +13,7 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [ cryptsetup ];
+  environment.systemPackages = with pkgs; [ cryptsetup discord ];
 
   services.udev.packages = [ pkgs.bazecor ];
 
@@ -47,6 +47,17 @@
         executable = "${lib.getBin pkgs.chromium}/bin/chromium";
         profile = "${pkgs.firejail}/etc/firejail/chromium.profile";
         extraArgs = [ "--netns=vpsvpn" ];
+      };
+      discord = {
+        executable = "${lib.getBin pkgs.discord}/bin/discord";
+        profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+        extraArgs = [ "--netns=vpn1" ];
+      };
+      # discord.desktop executes Discord with a capital D
+      Discord = {
+        executable = "${lib.getBin pkgs.discord}/bin/Discord";
+        profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+        extraArgs = [ "--netns=vpn1" ];
       };
     };
   };

@@ -14,6 +14,7 @@ in {
         "Bitwarden"
         "chromium"
         "dconf"
+        "discord"
         "filezilla"
         "fish" # fish_variables
         "gtk-3.0"
