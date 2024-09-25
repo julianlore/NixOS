@@ -51,6 +51,8 @@
     };
   };
 
+  # Allow backing up and overriding files, seems Impermanence activates too late?
+  home-manager.backupFileExtension = "hmbak";
   home-manager.users.jl = {
     imports = [ ./home-manager/common.nix ./home-manager/main-computer.nix ];
   };
