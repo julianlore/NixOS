@@ -4,6 +4,8 @@
   users.mutableUsers = false;
   environment.persistence."/persistent" = {
     hideMounts = true;
+    # Documentation about what is vital to persist for NixOS: /boot, /nix, /var/lib/nixos
+    # https://github.com/NixOS/nixpkgs/blob/master/nixos/doc/manual/administration/nixos-state.section.md
     directories = [
       "/nix"
       "/var/log"
