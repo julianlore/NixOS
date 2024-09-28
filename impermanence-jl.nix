@@ -23,6 +23,7 @@ in {
         "kdedefaults"
         "libreoffice"
         "obsidian"
+        "rclone"
         "Signal"
         "syncthing"
         "xsettingsd" # Theme, DPI, cursor, etc.

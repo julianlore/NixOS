@@ -11,6 +11,7 @@
     signal-desktop
     bazecor
     libreoffice-qt6-fresh
+    rclone
     (jellyfin-mpv-shim.overridePythonAttrs (prev: {
       # Add pypresence as a dependency to support Discord Rich Presence
       propagatedBuildInputs = prev.propagatedBuildInputs
