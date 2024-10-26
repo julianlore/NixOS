@@ -27,18 +27,18 @@
       ExecStart = with pkgs;
         writers.writeBash "wg-up" ''
           set -e
-          ${iproute}/bin/ip link add ${wg-interface} type wireguard
-          ${iproute}/bin/ip link set ${wg-interface} netns ${name}
-          ${iproute}/bin/ip -n ${name} address add ${ip} dev ${wg-interface}
-          ${iproute}/bin/ip netns exec ${name} \
+          ${iproute2}/bin/ip link add ${wg-interface} type wireguard
+          ${iproute2}/bin/ip link set ${wg-interface} netns ${name}
+          ${iproute2}/bin/ip -n ${name} address add ${ip} dev ${wg-interface}
+          ${iproute2}/bin/ip netns exec ${name} \
           ${wireguard-tools}/bin/wg setconf ${wg-interface} ${conf}
-          ${iproute}/bin/ip -n ${name} link set ${wg-interface} up
-          ${iproute}/bin/ip -n ${name} route add default dev ${wg-interface}
+          ${iproute2}/bin/ip -n ${name} link set ${wg-interface} up
+          ${iproute2}/bin/ip -n ${name} route add default dev ${wg-interface}
         '';
       ExecStop = with pkgs;
         writers.writeBash "wg-down" ''
-          ${iproute}/bin/ip -n ${name} route del default dev ${wg-interface}
-          ${iproute}/bin/ip -n ${name} link del ${wg-interface}
+          ${iproute2}/bin/ip -n ${name} route del default dev ${wg-interface}
+          ${iproute2}/bin/ip -n ${name} link del ${wg-interface}
         '';
     };
   };
