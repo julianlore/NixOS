@@ -44,7 +44,7 @@
     ngc = "nh clean all --keep 10 --keep-since 14d";
     nclean = "ngc";
     nup = "nh os switch --ask";
-    nfup = "nix flake update $FLAKE";
+    nfup = "nix flake update --flake $FLAKE";
     tideconf = ''
       tide configure \
         --auto \
