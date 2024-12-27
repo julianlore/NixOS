@@ -1,4 +1,4 @@
-{ config, pkgs, nixpkgs-stable, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./firefox ./plasma.nix ];
@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     bitwarden
     syncthing
-    nixpkgs-stable.legacyPackages.x86_64-linux.cryptomator
+    cryptomator
     audacious
     signal-desktop
     bazecor
