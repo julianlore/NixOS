@@ -6,7 +6,7 @@ in {
     # Prefer symlinking directories instead of default bindfs
     directories = [ "Documents" "NixOS" "persistent" "wg" ] ++
       # Program folders
-      [ "Dygma" ".mozilla" ".ssh" ".tmux" ] ++
+      [ "Dygma" ".mozilla" ".ssh" ".tmux" ".steam" ] ++
       # .config folders
       (builtins.map (prefixDir ".config") [
         "audacious"
@@ -28,9 +28,12 @@ in {
         "syncthing"
         "xsettingsd" # Theme, DPI, cursor, etc.
       ]) ++ (builtins.map (prefixDir ".local/share") [
+        "applications"
         "fish"
+        "icons/hicolor"
         "kwalletd"
         "nvim"
+        "Steam"
         "z"
       ]) ++ (builtins.map (prefixDir ".local/state") [ "nvim" "wireplumber" ]);
     files = [ ".bash_history" ".gitconfig" ".gtkrc-2.0" ]
