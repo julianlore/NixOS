@@ -7,6 +7,9 @@
       "obsidian"
       "steam"
       "steam-run"
+      # Jovian/Steam Deck
       "steam-jupiter-original"
+      "steam-jupiter-unwrapped"
+      "steamdeck-hw-theme"
     ];
 }
