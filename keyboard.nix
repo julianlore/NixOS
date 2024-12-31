@@ -1,4 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ bazecor ];
-  services.udev.packages = with pkgs; [ bazecor ];
+  hardware.keyboard.qmk.enable = true;
+  environment.systemPackages = with pkgs; [ bazecor qmk vial ];
+  services.udev.packages = with pkgs; [ bazecor vial ];
 }

@@ -6,7 +6,7 @@ in {
     # Prefer symlinking directories instead of default bindfs
     directories = [ "Documents" "NixOS" "persistent" "wg" ] ++
       # Program folders
-      [ "Dygma" ".mozilla" ".ssh" ".tmux" ".steam" ] ++
+      [ "Dygma" "qmk_firmware" ".mozilla" ".ssh" ".tmux" ".steam" ] ++
       # .config folders
       (builtins.map (prefixDir ".config") [
         "audacious"
@@ -23,6 +23,7 @@ in {
         "kdedefaults"
         "libreoffice"
         "obsidian"
+        "qmk"
         "rclone"
         "Signal"
         "syncthing"
