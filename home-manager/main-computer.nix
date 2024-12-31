@@ -9,7 +9,6 @@
     cryptomator
     audacious
     signal-desktop
-    bazecor
     libreoffice-qt6-fresh
     rclone
     (jellyfin-mpv-shim.overridePythonAttrs (prev: {

@@ -1,5 +1,10 @@
 { pkgs, lib, ... }: {
-  imports = [ ./wireguard/main-computer.nix ./impermanence.nix ./gaming.nix ];
+  imports = [
+    ./wireguard/main-computer.nix
+    ./impermanence.nix
+    ./gaming.nix
+    ./keyboard.nix
+  ];
   # Bypass rpfilter for 51820/wireguard using NetworkManager
   networking.firewall = {
     # wireguard trips rpfilter up
@@ -14,8 +19,6 @@
   };
 
   environment.systemPackages = with pkgs; [ cryptsetup discord ];
-
-  services.udev.packages = [ pkgs.bazecor ];
 
   programs.firejail = {
     enable = true;
