@@ -36,6 +36,19 @@
     sources.formatting = { nixfmt.enable = true; };
   };
 
+  qmk = {
+    enable = true;
+    settings = {
+      name = "LAYOUT_split_3x5_3_ex2";
+      layout = [
+        "x x x x x x _ x x x x x x"
+        "x x x x x x _ x x x x x x"
+        "x x x x x _ _ _ x x x x x"
+        "_ _ _ x x x _ x x x _ _ _"
+      ];
+    };
+  };
+
   fugitive.enable = true;
   gitsigns.enable = true;
   lazygit.enable = true;
