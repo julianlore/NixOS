@@ -23,7 +23,10 @@
 
   lsp = {
     enable = true;
-    servers = { nixd.enable = true; };
+    servers = {
+      clangd.enable = true;
+      nixd.enable = true;
+    };
   };
 
   lsp-format.enable = true;
