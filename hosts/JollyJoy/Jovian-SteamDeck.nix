@@ -8,11 +8,6 @@
 
   specialisation.gamingmode = {
     configuration = {
-      jovian.decky-loader = {
-        enable = true;
-        user = "jl";
-      };
-
       jovian.devices.steamdeck = {
         enable = true;
         enableKernelPatches = false;
