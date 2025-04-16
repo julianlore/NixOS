@@ -16,6 +16,8 @@
       ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
       ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
     '';
+    # 3389 = RDP
+    allowedTCPPorts = [ 3389 ];
   };
 
   environment.systemPackages = with pkgs; [ cryptsetup discord ];

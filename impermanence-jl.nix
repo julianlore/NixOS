@@ -17,6 +17,7 @@ in {
         "discord"
         "filezilla"
         "fish" # fish_variables
+        "freerdp"
         "gtk-3.0"
         "gtk-4.0"
         "jellyfin-mpv-shim"
@@ -32,6 +33,7 @@ in {
         "applications"
         "fish"
         "icons/hicolor"
+        "krdpserver"
         "kwalletd"
         "nvim"
         "Steam"
@@ -46,6 +48,7 @@ in {
         "kglobalshortcutsrc"
         "konsolerc"
         "kscreenlockerrc"
+        "krdpserverrc"
         "kwalletrc"
         "kwinoutputconfig.json" # Display configuration (which screens to use, resolution, etc.)
         "kwinrc" # Desktops, night color, tiling
