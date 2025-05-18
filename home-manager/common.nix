@@ -30,7 +30,7 @@
 
   home.sessionVariables = {
     # Used by nh
-    FLAKE = "$HOME/NixOS";
+    NH_FLAKE = "$HOME/NixOS";
   };
 
   programs.tmux = import ./tmux.nix { tmuxPlugins = pkgs.tmuxPlugins; };
