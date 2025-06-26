@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     arkenfox = {
-      url = "github:dwarfmaster/arkenfox-nixos";
+      url = "github:dwarfmaster/arkenfox-nixos/57eefe49b80ea5e02f42199db531292de34a4350";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefox-csshacks = {
