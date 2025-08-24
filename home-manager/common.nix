@@ -3,7 +3,7 @@
 
 {
   imports =
-    [ nixvim.homeManagerModules.nixvim nix-index-database.hmModules.nix-index ];
+    [ nixvim.homeModules.nixvim nix-index-database.homeModules.nix-index ];
 
   home.username = "jl";
   home.homeDirectory = "/home/jl";
