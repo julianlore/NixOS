@@ -29,9 +29,9 @@
   home.file.".config/autostart/obsidian.desktop".source =
     config.lib.file.mkOutOfStoreSymlink
     "/home/jl/.nix-profile/share/applications/obsidian.desktop";
-  home.file.".config/autostart/signal-desktop.desktop".source =
+  home.file.".config/autostart/signal.desktop".source =
     config.lib.file.mkOutOfStoreSymlink
-    "/home/jl/.nix-profile/share/applications/signal-desktop.desktop";
+    "/home/jl/.nix-profile/share/applications/signal.desktop";
   home.file.".config/autostart/konsole-tmux.desktop".text = ''
     [Desktop Entry]
     Exec=konsole -e tmux attach-session
