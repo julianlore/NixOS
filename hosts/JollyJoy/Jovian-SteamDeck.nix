@@ -6,21 +6,5 @@
   jovian.devices.steamdeck.enableControllerUdevRules = true;
   jovian.hardware.has.amd.gpu = true;
 
-  specialisation.gamingmode = {
-    configuration = {
-      jovian.devices.steamdeck = {
-        enable = true;
-        enableKernelPatches = false;
-        # OS fan service fails to start
-        enableOsFanControl = false;
-      };
-
-      jovian.steam = {
-        autoStart = true;
-        enable = true;
-        user = "jl";
-        desktopSession = "plasma";
-      };
-    };
-  };
+  specialisation.gamingmode = import ./gaming-mode-specialization.nix;
 }
