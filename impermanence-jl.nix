@@ -31,6 +31,7 @@ in {
         "xsettingsd" # Theme, DPI, cursor, etc.
       ]) ++ (builtins.map (prefixDir ".local/share") [
         "applications"
+        "containers" # Podman
         "fish"
         "icons/hicolor"
         "krdpserver"
