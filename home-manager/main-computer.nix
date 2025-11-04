@@ -4,7 +4,7 @@
   imports = [ ./firefox ./plasma.nix ];
 
   home.packages = with pkgs; [
-    bitwarden
+    bitwarden-desktop
     syncthing
     cryptomator
     audacious
