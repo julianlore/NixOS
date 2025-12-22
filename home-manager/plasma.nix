@@ -2,6 +2,57 @@
   imports = [ plasma-manager.homeModules.plasma-manager ];
   programs.plasma = {
     enable = true;
+    input.keyboard.layouts = [{
+      layout = "ca";
+      variant = "multix";
+    }];
+    kscreenlocker = {
+      autoLock = false;
+      lockOnResume = false;
+    };
+    kwin.nightLight.enable = true;
+    panels = [{
+      widgets = [
+        "org.kde.plasma.kickoff"
+        {
+          iconTasks = {
+            launchers = [
+              "preferred://browser"
+              "applications:org.kde.konsole.desktop"
+              "applications:obsidian.desktop"
+              "applications:discord.desktop"
+              "applications:bitwarden.desktop"
+              "applications:steam.desktop"
+            ];
+          };
+        }
+        "org.kde.plasma.marginsseparator"
+        "org.kde.plasma.systemtray"
+        { digitalClock = { time.showSeconds = "always"; }; }
+      ];
+    }];
+    powerdevil = {
+      AC = {
+        autoSuspend.action = "nothing";
+        dimDisplay = {
+          enable = true;
+          idleTimeout = 120;
+        };
+        powerButtonAction = "turnOffScreen";
+        turnOffDisplay.idleTimeout = 300;
+      };
+      battery = {
+        autoSuspend.action = "nothing";
+        dimDisplay = {
+          enable = true;
+          idleTimeout = 60;
+        };
+        powerButtonAction = "sleep";
+        turnOffDisplay.idleTimeout = 120;
+      };
+    };
+    session.sessionRestore.restoreOpenApplicationsOnLogin =
+      "startWithEmptySession";
     shortcuts = {
       "kcm_touchpad"."Enable Touchpad" =
         [ ]; # Overwrite Touchpad as to not conflict with mic_mute
@@ -35,20 +86,18 @@
       "plasmashell"."activate task manager entry 10" = "Meta+0";
       "plasmashell"."show-on-mouse-pos" = "Meta+V";
     };
+    workspace = {
+      colorScheme = "BreezeDark";
+      lookAndFeel = "org.kde.breezedark.desktop";
+      theme = "breeze-dark";
+    };
     configFile = {
       "baloofilerc"."Basic Settings"."Indexing-Enabled" =
         false; # Disable file indexing as it takes up a lot of space and will be redone on boot if not persisted
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
-      "kscreenlockerrc"."Daemon"."Autolock" = false;
-      "kscreenlockerrc"."Daemon"."LockOnResume" = false;
-      "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwalletrc"."Wallet"."First Use" = false;
-      "kwinrc"."NightColor"."Active" = true;
       "kwinrc"."Windows"."Placement" = "Maximizing";
-      "kxkbrc"."Layout"."LayoutList" = "ca";
-      "kxkbrc"."Layout"."Use" = true;
-      "kxkbrc"."Layout"."VariantList" = "multix";
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
     };
   };
