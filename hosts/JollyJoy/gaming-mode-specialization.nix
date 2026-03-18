@@ -1,5 +1,7 @@
+{ lib, ... }:
 {
   configuration = {
+    services.displayManager.defaultSession = lib.mkForce "gamescope-wayland";
     jovian.devices.steamdeck = {
       enable = true;
       enableKernelPatches = false;
