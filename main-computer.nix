@@ -27,6 +27,17 @@
     discord
   ];
 
+  # Custom firejail additions
+  # Allow access to Downloads folder in Firefox and Chromium
+  environment.etc = {
+    "firejail/firefox.local".text = ''
+      whitelist ''${HOME}/Downloads
+    '';
+    "firejail/chromium.local".text = ''
+      whitelist ''${HOME}/Downloads
+    '';
+  };
+
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
