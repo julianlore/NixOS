@@ -1,10 +1,15 @@
 { pkgs, ... }:
 
-let nixPath = "/etc/nixPath";
-in {
+let
+  nixPath = "/etc/nixPath";
+in
+{
   imports = [ ./unfree-package-whitelist.nix ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Make nixpkgs follow flakes
   systemd.tmpfiles.rules = [ "L+ ${nixPath} - - - - ${pkgs.path}" ];
@@ -25,7 +30,11 @@ in {
 
   home-manager.useGlobalPkgs = true;
 
-  environment.systemPackages = with pkgs; [ vim wget git ];
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+  ];
 
   programs.fish.enable = true;
   # As recommended on https://nixos.wiki/wiki/Fish, do not set fish as login shell, launch fish with bash unless already parent is fish
@@ -51,7 +60,9 @@ in {
     };
   };
 
-  programs.nh = { enable = true; };
+  programs.nh = {
+    enable = true;
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

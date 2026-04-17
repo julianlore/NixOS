@@ -1,9 +1,17 @@
-{ pkgs, nixvim, nix-index-database, plugin-telescope-recent-files
-, plugin-fish-abbreviation-tips, ... }:
+{
+  pkgs,
+  nixvim,
+  nix-index-database,
+  plugin-telescope-recent-files,
+  plugin-fish-abbreviation-tips,
+  ...
+}:
 
 {
-  imports =
-    [ nixvim.homeModules.nixvim nix-index-database.homeModules.nix-index ];
+  imports = [
+    nixvim.homeModules.nixvim
+    nix-index-database.homeModules.nix-index
+  ];
 
   home.username = "jl";
   home.homeDirectory = "/home/jl";
@@ -17,7 +25,12 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [ nnn lazygit grc ripgrep ];
+  home.packages = with pkgs; [
+    nnn
+    lazygit
+    grc
+    ripgrep
+  ];
 
   programs.nixvim = import ./neovim {
     pkgs = pkgs;

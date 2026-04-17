@@ -14,8 +14,10 @@
     pulse.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ firefox chromium ];
+  environment.systemPackages = with pkgs; [
+    firefox
+    chromium
+  ];
 
-  fonts.packages = with pkgs;
-    [ nerd-fonts.iosevka ];
+  fonts.packages = with pkgs; [ nerd-fonts.iosevka ];
 }

@@ -1,4 +1,5 @@
-{ arkenfox, ... }: {
+{ arkenfox, ... }:
+{
   imports = [ arkenfox.hmModules.arkenfox ];
 
   programs.firefox = {
@@ -13,8 +14,7 @@
       enableAllSections = true;
       # Resume previous session
       "0100"."0102"."browser.startup.page".value = 3;
-      "2800"."2812"."privacy.clearOnShutdown_v2.browsingHistoryAndDownloads".value =
-        false;
+      "2800"."2812"."privacy.clearOnShutdown_v2.browsingHistoryAndDownloads".value = false;
     };
   };
 }

@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   imports = [
     ./wireguard/main-computer.nix
     ./impermanence.nix
@@ -21,7 +22,10 @@
     allowedTCPPorts = [ 3389 ];
   };
 
-  environment.systemPackages = with pkgs; [ cryptsetup discord ];
+  environment.systemPackages = with pkgs; [
+    cryptsetup
+    discord
+  ];
 
   programs.firejail = {
     enable = true;
@@ -71,6 +75,9 @@
   # Allow backing up and overriding files, seems Impermanence activates too late?
   home-manager.backupFileExtension = "hmbak";
   home-manager.users.jl = {
-    imports = [ ./home-manager/common.nix ./home-manager/main-computer.nix ];
+    imports = [
+      ./home-manager/common.nix
+      ./home-manager/main-computer.nix
+    ];
   };
 }

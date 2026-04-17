@@ -1,6 +1,6 @@
-{ firefox-csshacks, ... }: {
-  home.file.".mozilla/firefox/Default/chrome/chrome".source =
-    "${firefox-csshacks}/chrome";
+{ firefox-csshacks, ... }:
+{
+  home.file.".mozilla/firefox/Default/chrome/chrome".source = "${firefox-csshacks}/chrome";
 
   programs.firefox.profiles.Default.userChrome = ''
     @import url(chrome/window_control_placeholder_support.css);

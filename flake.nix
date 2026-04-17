@@ -41,19 +41,27 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, jovian, ... }: {
-    nixosConfigurations.JollyJoy = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-        ./main-computer.nix
-        ./graphical.nix
-        ./hosts/JollyJoy
-        impermanence.nixosModules.impermanence
-        jovian.nixosModules.default
-        home-manager.nixosModules.home-manager
-        { home-manager.extraSpecialArgs = inputs; }
-      ];
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      impermanence,
+      jovian,
+      ...
+    }:
+    {
+      nixosConfigurations.JollyJoy = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./main-computer.nix
+          ./graphical.nix
+          ./hosts/JollyJoy
+          impermanence.nixosModules.impermanence
+          jovian.nixosModules.default
+          home-manager.nixosModules.home-manager
+          { home-manager.extraSpecialArgs = inputs; }
+        ];
+      };
     };
-  };
 }

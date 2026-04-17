@@ -29,12 +29,17 @@
 
   plugins = import ./plugins.nix;
 
-  extraPlugins = (with pkgs.vimPlugins; [ remember-nvim legendary-nvim ]) ++ [
-    (pkgs.vimUtils.buildVimPlugin {
-      name = "telescope-recent-files";
-      src = plugin-telescope-recent-files;
-    })
-  ];
+  extraPlugins =
+    (with pkgs.vimPlugins; [
+      remember-nvim
+      legendary-nvim
+    ])
+    ++ [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "telescope-recent-files";
+        src = plugin-telescope-recent-files;
+      })
+    ];
 
   extraConfigLua = ''
     require('remember');

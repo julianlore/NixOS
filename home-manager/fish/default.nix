@@ -62,14 +62,26 @@
         --transient=No
     '';
     # Copy last Defy backup
-    cpdefy =
-      "cp $(ls -1d $(ls -1d ~/Dygma/Backups/Defy/*)/* | tail -n1) ~/persistent/Defy/Defy.json";
+    cpdefy = "cp $(ls -1d $(ls -1d ~/Dygma/Backups/Defy/*)/* | tail -n1) ~/persistent/Defy/Defy.json";
   };
-  plugins = map (n: {
-    name = n;
-    src = pkgs.fishPlugins.${n}.src;
-  }) [ "done" "grc" "pisces" "sponge" "tide" "z" ] ++ [{
-    name = "abbreviation-tips";
-    src = plugin-fish-abbreviation-tips;
-  }];
+  plugins =
+    map
+      (n: {
+        name = n;
+        src = pkgs.fishPlugins.${n}.src;
+      })
+      [
+        "done"
+        "grc"
+        "pisces"
+        "sponge"
+        "tide"
+        "z"
+      ]
+    ++ [
+      {
+        name = "abbreviation-tips";
+        src = plugin-fish-abbreviation-tips;
+      }
+    ];
 }

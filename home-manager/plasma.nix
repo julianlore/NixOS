@@ -1,36 +1,45 @@
-{ plasma-manager, ... }: {
+{ plasma-manager, ... }:
+{
   imports = [ plasma-manager.homeModules.plasma-manager ];
   programs.plasma = {
     enable = true;
-    input.keyboard.layouts = [{
-      layout = "ca";
-      variant = "multix";
-    }];
+    input.keyboard.layouts = [
+      {
+        layout = "ca";
+        variant = "multix";
+      }
+    ];
     kscreenlocker = {
       autoLock = false;
       lockOnResume = false;
     };
     kwin.nightLight.enable = true;
-    panels = [{
-      widgets = [
-        "org.kde.plasma.kickoff"
-        {
-          iconTasks = {
-            launchers = [
-              "preferred://browser"
-              "applications:org.kde.konsole.desktop"
-              "applications:obsidian.desktop"
-              "applications:discord.desktop"
-              "applications:bitwarden.desktop"
-              "applications:steam.desktop"
-            ];
-          };
-        }
-        "org.kde.plasma.marginsseparator"
-        "org.kde.plasma.systemtray"
-        { digitalClock = { time.showSeconds = "always"; }; }
-      ];
-    }];
+    panels = [
+      {
+        widgets = [
+          "org.kde.plasma.kickoff"
+          {
+            iconTasks = {
+              launchers = [
+                "preferred://browser"
+                "applications:org.kde.konsole.desktop"
+                "applications:obsidian.desktop"
+                "applications:discord.desktop"
+                "applications:bitwarden.desktop"
+                "applications:steam.desktop"
+              ];
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          {
+            digitalClock = {
+              time.showSeconds = "always";
+            };
+          }
+        ];
+      }
+    ];
     powerdevil = {
       AC = {
         autoSuspend.action = "nothing";
@@ -51,11 +60,9 @@
         turnOffDisplay.idleTimeout = 120;
       };
     };
-    session.sessionRestore.restoreOpenApplicationsOnLogin =
-      "startWithEmptySession";
+    session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
     shortcuts = {
-      "kcm_touchpad"."Enable Touchpad" =
-        [ ]; # Overwrite Touchpad as to not conflict with mic_mute
+      "kcm_touchpad"."Enable Touchpad" = [ ]; # Overwrite Touchpad as to not conflict with mic_mute
       "kmix"."mic_mute" = "Touchpad On"; # Touchpad On = F22
       "kwin"."Show Desktop" = "Meta+D";
       "kwin"."Walk Through Windows" = "Alt+Tab";
@@ -74,9 +81,18 @@
       "kwin"."Window to Next Screen" = "Meta+Shift+Right";
       "kwin"."Window to Previous Screen" = "Meta+Shift+Left";
       "org_kde_powerdevil"."Turn Off Screen" = "Launch (5)"; # Launch (5) = F14
-      "plasmashell"."activate task manager entry 1" = [ "Meta+1" "Meta+B" ];
-      "plasmashell"."activate task manager entry 2" = [ "Meta+2" "Meta+C" ];
-      "plasmashell"."activate task manager entry 3" = [ "Meta+3" "Meta+X" ];
+      "plasmashell"."activate task manager entry 1" = [
+        "Meta+1"
+        "Meta+B"
+      ];
+      "plasmashell"."activate task manager entry 2" = [
+        "Meta+2"
+        "Meta+C"
+      ];
+      "plasmashell"."activate task manager entry 3" = [
+        "Meta+3"
+        "Meta+X"
+      ];
       "plasmashell"."activate task manager entry 4" = "Meta+4";
       "plasmashell"."activate task manager entry 5" = "Meta+5";
       "plasmashell"."activate task manager entry 6" = "Meta+6";
@@ -92,8 +108,7 @@
       theme = "breeze-dark";
     };
     configFile = {
-      "baloofilerc"."Basic Settings"."Indexing-Enabled" =
-        false; # Disable file indexing as it takes up a lot of space and will be redone on boot if not persisted
+      "baloofilerc"."Basic Settings"."Indexing-Enabled" = false; # Disable file indexing as it takes up a lot of space and will be redone on boot if not persisted
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kwalletrc"."Wallet"."First Use" = false;

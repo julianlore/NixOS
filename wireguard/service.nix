@@ -12,7 +12,15 @@
 #   })
 # ];
 # Make sure to remove/comment Address and DNS from conf. Conf name does not matter/need to match interface.
-{ pkgs, name, wg-interface, ip, dns, conf }: {
+{
+  pkgs,
+  name,
+  wg-interface,
+  ip,
+  dns,
+  conf,
+}:
+{
   systemd.services.${name} = {
     description = "wg ${name} network interface";
     bindsTo = [ "netns@${name}.service" ];
@@ -24,7 +32,8 @@
       RemainAfterExit = true;
       # Only start service if the configuration file exists. This allows declaring many services (which are enabled), but can be toggled off at boot by renaming the file.
       ExecStartPre = "${pkgs.coreutils}/bin/test -f ${conf}";
-      ExecStart = with pkgs;
+      ExecStart =
+        with pkgs;
         writers.writeBash "wg-up" ''
           set -e
           ${iproute2}/bin/ip link add ${wg-interface} type wireguard
@@ -35,7 +44,8 @@
           ${iproute2}/bin/ip -n ${name} link set ${wg-interface} up
           ${iproute2}/bin/ip -n ${name} route add default dev ${wg-interface}
         '';
-      ExecStop = with pkgs;
+      ExecStop =
+        with pkgs;
         writers.writeBash "wg-down" ''
           ${iproute2}/bin/ip -n ${name} route del default dev ${wg-interface}
           ${iproute2}/bin/ip -n ${name} link del ${wg-interface}

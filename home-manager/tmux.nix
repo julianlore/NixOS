@@ -1,4 +1,5 @@
-{ tmuxPlugins, ... }: {
+{ tmuxPlugins, ... }:
+{
   enable = true;
   newSession = true;
   prefix = "C-a";

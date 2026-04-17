@@ -33,7 +33,9 @@
 
   none-ls = {
     enable = true;
-    sources.formatting = { nixfmt.enable = true; };
+    sources.formatting = {
+      nixfmt.enable = true;
+    };
   };
 
   qmk = {
@@ -46,8 +48,7 @@
         "x x x x x _ _ _ x x x x x"
         "_ _ _ x x x _ x x x _ _ _"
       ];
-      comment_preview.keymap_overrides =
-        import ./qmk_keymap_canadian_multilingual.nix;
+      comment_preview.keymap_overrides = import ./qmk_keymap_canadian_multilingual.nix;
     };
   };
 
