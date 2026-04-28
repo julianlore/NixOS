@@ -43,7 +43,7 @@
   shellAbbrs = import ./git.nix // {
     ngc = "nh clean all --keep 10 --keep-since 14d";
     nclean = "ngc";
-    nup = "nh os switch --ask";
+    nup = "nh os boot --ask";
     nfup = "nix flake update --flake $NH_FLAKE --commit-lock-file";
     tideconf = ''
       tide configure \
