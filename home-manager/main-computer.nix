@@ -7,7 +7,6 @@
   ];
 
   home.packages = with pkgs; [
-    bitwarden-desktop
     syncthing
     cryptomator
     audacious

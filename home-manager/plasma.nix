@@ -25,7 +25,6 @@
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
                 "applications:discord.desktop"
-                "applications:bitwarden.desktop"
                 "applications:steam.desktop"
               ];
             };
