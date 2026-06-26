@@ -23,8 +23,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    claude-code
     cryptsetup
     discord
+    mcp-nixos
   ];
 
   # Custom firejail additions
