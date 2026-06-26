@@ -6,6 +6,7 @@
     ./gaming.nix
     ./keyboard.nix
     ./podman.nix
+    ./ssh.nix
   ];
   # Bypass rpfilter for 51820/wireguard using NetworkManager
   networking.firewall = {
