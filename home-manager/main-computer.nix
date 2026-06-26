@@ -13,7 +13,7 @@
     signal-desktop
     libreoffice-qt6-fresh
     rclone
-    jellyfin-mpv-shim
+    # jellyfin-mpv-shim
     # Nonfree
     obsidian
   ];
