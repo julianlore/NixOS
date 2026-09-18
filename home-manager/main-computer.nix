@@ -11,7 +11,7 @@
     cryptomator
     audacious
     signal-desktop
-    libreoffice-qt6-fresh
+    libreoffice-qt6
     rclone
     # jellyfin-mpv-shim
     # Nonfree
