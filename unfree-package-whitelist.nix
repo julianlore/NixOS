@@ -6,6 +6,7 @@
     builtins.elem (lib.getName pkg) [
       "claude-code"
       "discord"
+      "discord-unwrapped"
       "obsidian"
       "steam"
       "steam-run"
