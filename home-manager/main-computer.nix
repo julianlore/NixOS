@@ -23,7 +23,7 @@
   home.file.".config/autostart/firefox.desktop".source =
     config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/firefox.desktop";
   home.file.".config/autostart/obsidian.desktop".source =
-    config.lib.file.mkOutOfStoreSymlink "/home/jl/.nix-profile/share/applications/obsidian.desktop";
+    config.lib.file.mkOutOfStoreSymlink "/home/jl/.nix-profile/share/applications/md.obsidian.Obsidian.desktop";
   home.file.".config/autostart/signal.desktop".source =
     config.lib.file.mkOutOfStoreSymlink "/home/jl/.nix-profile/share/applications/signal.desktop";
   home.file.".config/autostart/konsole-tmux.desktop".text = ''

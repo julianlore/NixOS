@@ -23,7 +23,7 @@
               launchers = [
                 "preferred://browser"
                 "applications:org.kde.konsole.desktop"
-                "applications:obsidian.desktop"
+                "applications:md.obsidian.Obsidian.desktop"
                 "applications:discord.desktop"
                 "applications:steam.desktop"
               ];
