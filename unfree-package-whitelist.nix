@@ -9,6 +9,7 @@
       "discord-unwrapped"
       "obsidian"
       "steam"
+      "steam-unwrapped"
       "steam-run"
       # Jovian/Steam Deck
       "steam-jupiter-original"
