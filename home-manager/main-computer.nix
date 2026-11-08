@@ -13,6 +13,8 @@
     signal-desktop
     libreoffice-qt6
     rclone
+    opencode
+    opencode-desktop
     # jellyfin-mpv-shim
     # Nonfree
     obsidian

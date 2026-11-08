@@ -38,6 +38,7 @@ in
         "jellyfin-mpv-shim"
         "libreoffice"
         "obsidian"
+        "opencode"
         "qmk"
         "rclone"
         "Signal"
@@ -51,11 +52,13 @@ in
       "icons/hicolor"
       "kwalletd"
       "nvim"
+      "opencode"
       "Steam"
       "z"
     ])
     ++ (builtins.map (prefixDir ".local/state") [
       "nvim"
+      "opencode"
       "wireplumber"
     ]);
     files = [
