@@ -17,7 +17,6 @@
     "sdhci_pci"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.initrd.systemd.enable = false;
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -45,7 +44,6 @@
     device = "/dev/disk/by-uuid/45a4663c-dd78-4661-8997-70d506ba5315";
     keyFileSize = 2048;
     keyFile = "/dev/sda";
-    fallbackToPassword = true;
   };
 
   fileSystems."/persistent" = {
