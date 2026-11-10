@@ -7,6 +7,18 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "jl";
 
+  # Blank and power off the screen after 1 minute while the LightDM greeter is shown
+  # (for example after KRDP logs out the host session). These render into the
+  # ServerFlags section of the generated xorg.conf, which applies to the
+  # greeter's X server; the Plasma session manages its own screen power
+  # settings after login.
+  services.xserver.serverFlagsSection = ''
+    Option "BlankTime" "1"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "1"
+  '';
+
   hardware.bluetooth.enable = true;
 
   services.pipewire = {
