@@ -37,5 +37,14 @@
     X-KDE-AutostartScript=true
   '';
 
+  # KDE remote desktop (KRDP) settings window
+  home.file.".config/autostart/krdp-settings.desktop".text = ''
+    [Desktop Entry]
+    Exec=kcmshell6 kcm_krdpserver
+    Icon=preferences-system-network-remote
+    Name=Remote Desktop Settings
+    Type=Application
+  '';
+
   services.syncthing.enable = true;
 }

@@ -50,6 +50,7 @@ in
       "containers" # Podman
       "fish"
       "icons/hicolor"
+      "krdpserver" # KRDP TLS certificate/key
       "kwalletd"
       "nvim"
       "opencode"
@@ -69,6 +70,7 @@ in
     ++ (builtins.map (prefixFile ".config") [
       "gtkrc"
       "gtkrc-2.0"
+      "krdpserverrc" # KRDP server settings (users, quality, certificate paths, etc.)
       "kwinoutputconfig.json" # Display configuration (which screens to use, resolution, etc.)
       "mimeapps.list" # Default programs
       "plasma-nm" # Whether airplane mode is on
