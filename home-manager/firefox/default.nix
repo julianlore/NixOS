@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   imports = [
     ./arkenfox.nix
@@ -7,5 +9,6 @@
     enable = true;
     # Do not install firefox for user, as it will overwrite the firejail wrapper
     package = null;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 }

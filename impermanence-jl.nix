@@ -16,7 +16,6 @@ in
       [
         "Dygma"
         "qmk_firmware"
-        ".mozilla"
         ".ssh"
         ".tmux"
         ".steam"
@@ -37,6 +36,7 @@ in
         "gtk-4.0"
         "jellyfin-mpv-shim"
         "libreoffice"
+        "mozilla"
         "obsidian"
         "opencode"
         "qmk"
