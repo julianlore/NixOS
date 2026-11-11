@@ -1,5 +1,6 @@
 {
   pkgs,
+  nixpkgs,
   nixvim,
   nix-index-database,
   plugin-telescope-recent-files,
@@ -34,6 +35,7 @@
 
   programs.nixvim = import ./neovim {
     pkgs = pkgs;
+    nixpkgs = nixpkgs;
     plugin-telescope-recent-files = plugin-telescope-recent-files;
   };
   programs.fish = import ./fish {

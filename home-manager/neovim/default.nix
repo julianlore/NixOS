@@ -1,10 +1,16 @@
-{ pkgs, plugin-telescope-recent-files, ... }:
+{
+  pkgs,
+  nixpkgs,
+  plugin-telescope-recent-files,
+  ...
+}:
 
 {
   enable = true;
   defaultEditor = true;
   viAlias = true;
   vimAlias = true;
+  nixpkgs.source = nixpkgs;
   opts = {
     hlsearch = false;
     number = true;
