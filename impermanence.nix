@@ -14,6 +14,7 @@
       "/var/lib/NetworkManager" # Remember if wifi is off, as NetworkManager manages it
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager"
+      "/etc/ssh"
     ];
     files = [ "/etc/machine-id" ];
   };
